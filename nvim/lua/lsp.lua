@@ -1,5 +1,7 @@
 local lspconfig = require 'lspconfig'
 
+local H = require("helpers")
+
 local function eslint_config_exists()
   local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
 

@@ -1,3 +1,5 @@
+local H = require("helpers")
+
 H.map('n', {
     ["<leader>ff"] = "<cmd>Telescope find_files<cr>",
     ["<leader>fg"] = "<cmd>Telescope live_grep<cr>",

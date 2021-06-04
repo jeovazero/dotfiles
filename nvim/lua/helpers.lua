@@ -1,3 +1,5 @@
+local F = require('F')
+
 H = {}
 
 H.map = function(mode, mapping)

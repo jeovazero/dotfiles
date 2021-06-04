@@ -1,5 +1,9 @@
-local F = require("F") -- fns
 local H = require("helpers") -- vim helpers
+
+local globals = vim.g
+globals.mapleader = ','
+vim.o.number = true
+vim.w.number = true
 
 require("plugins")
 require("nvimTree")
@@ -10,11 +14,6 @@ require("lsp")
 require("nvimCompe")
 require("gitsigns").setup()
 require("telescopeConfig")
-
-local globals = vim.g
-globals.mapleader = ','
-vim.o.number = true
-vim.w.number = true
 
 -- Mappings
 H.map('n', {
