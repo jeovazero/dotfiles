@@ -29,8 +29,7 @@ return require('packer').startup(function()
     }
 
     use {
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
+        'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 end)
