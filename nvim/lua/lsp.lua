@@ -18,6 +18,8 @@ local function eslint_config_exists()
   return false
 end
 
+lspconfig.julials.setup{}
+
 lspconfig.tsserver.setup {
     cmd = {"typescript-language-server", "--stdio"},
     filetypes = {
