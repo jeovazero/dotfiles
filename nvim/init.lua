@@ -14,6 +14,7 @@ require("lsp")
 require("nvimCompe")
 require("gitsigns").setup()
 require("telescopeConfig")
+require("statusline")
 
 -- Mappings
 H.map('n', {

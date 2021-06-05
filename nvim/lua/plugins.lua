@@ -22,5 +22,15 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'wakatime/vim-wakatime'
 
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+    use {
+        'iamcco/markdown-preview.nvim',
+        run = 'cd app && yarn install',
+        cmd = 'MarkdownPreview'
+    }
+
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
 end)
