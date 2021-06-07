@@ -2,8 +2,12 @@ local H = require("helpers") -- vim helpers
 
 local globals = vim.g
 globals.mapleader = ','
-vim.o.number = true
-vim.w.number = true
+vim.opt.number = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.updatetime = 200
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 require("plugins")
 require("nvimTree")
@@ -18,11 +22,16 @@ require("statusline")
 
 -- Mappings
 H.map('n', {
-    ["<Tab>"] = ":tabnext<CR>",
-    ["<S-Tab>"] = ":tabprev<CR>",
-    ["<S-t>"] = ":tabnew<CR>",
-    ["<C-h>"] = ":wincmd h<CR>",
-    ["<C-l>"] = ":wincmd l<CR>",
-    ["<C-k>"] = ":wincmd k<CR>",
-    ["<C-j>"] = ":wincmd j<CR>"
+    ["<Tab>"]     = ":tabnext<CR>",
+    ["<S-Tab>"]   = ":tabprev<CR>",
+    ["<S-t>"]     = ":tabnew<CR>",
+    ["<C-h>"]     = ":wincmd h<CR>",
+    ["<C-l>"]     = ":wincmd l<CR>",
+    ["<C-k>"]     = ":wincmd k<CR>",
+    ["<C-j>"]     = ":wincmd j<CR>",
+    ["<A-Right>"] = ":vertical resize +5<CR>",
+    ["<A-Left>"]  = ":vertical resize -5<CR>",
+    ["<leader>q"] = ":bp<CR>",
+    ["<leader>w"] = ":bn<CR>",
+    ["<leader>c"] = ":bd<CR>"
 })
