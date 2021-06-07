@@ -19,6 +19,7 @@ require("nvimCompe")
 require("gitsigns").setup()
 require("telescopeConfig")
 require("statusline")
+require("gitsignsConfig")
 
 -- Mappings
 H.map('n', {
