@@ -1,0 +1,59 @@
+add_newline = false
+
+format = """\
+  $username\
+  $hostname\
+  $directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  ${custom.haskell}\
+  $nodejs\
+  $python\
+  $nix_shell\
+  $cmd_duration\
+  $line_break\
+  $jobs\
+  $battery\
+  $time\
+  $status\
+  $shell\
+  $character\
+  """
+
+[character]
+format = "[\uE67F](red) $symbol "
+
+[package]
+disabled = true
+
+[git_branch]
+symbol = "[\ue702](red) "
+truncation_length = 28
+truncation_symbol = "..."
+
+[custom.haskell]
+command = "ghc --version | grep -E '[0-9]+(.[0-9]+)+' -o"  # shows output of command
+when="ghc --version"
+style = "bright-purple bold"
+format = "➜ [\uE95F ghc\\($output\\)]($style) "
+extensions = ["hs", "cabal"]
+
+[nodejs]
+symbol = "\uEB6A "
+format = "➜ [$symbol($version )]($style)"
+
+[nix_shell]
+format = '➜ [nix\($state\)]($style) '
+
+[aws]
+disabled = true
+
+[python]
+symbol = "\uEB89 "
+format = '➜ [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)'
+python_binary = "python3"
+
+[line_break]
+disabled = false
