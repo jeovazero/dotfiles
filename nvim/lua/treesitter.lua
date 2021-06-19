@@ -1,6 +1,7 @@
 local ts = require 'nvim-treesitter.configs'
 
 vim.cmd "autocmd BufRead,BufNewFile *.jl :set filetype=julia"
+vim.cmd "autocmd BufRead,BufNewFile *.nix :set filetype=nix"
 
 ts.setup {
     ensure_installed = {
