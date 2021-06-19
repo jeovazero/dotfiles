@@ -45,7 +45,7 @@ symbol = "\uEB6A "
 format = "➜ [$symbol($version )]($style)"
 
 [nix_shell]
-format = '➜ [nix\($state\)]($style) '
+format = "➜ [\uF313 \\($state\\)]($style) "
 
 [aws]
 disabled = true
