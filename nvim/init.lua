@@ -32,6 +32,8 @@ H.map('n', {
     ["<C-j>"]     = ":wincmd j<CR>",
     ["<A-Right>"] = ":vertical resize +5<CR>",
     ["<A-Left>"]  = ":vertical resize -5<CR>",
+    ["<A-Up>"] = ":resize +5<CR>",
+    ["<A-Down>"]  = ":resize -5<CR>",
     ["<leader>q"] = ":bp<CR>",
     ["<leader>w"] = ":bn<CR>",
     ["<leader>c"] = ":bd<CR>"

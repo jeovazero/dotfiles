@@ -82,7 +82,9 @@ H.map('n', {
     ['<leader>s'] = '<cmd>lua vim.lsp.buf.hover()<CR>',
     ['<leader>rn'] = '<cmd>lua vim.lsp.buf.rename()<CR>',
     ['tr'] = '<cmd>lua vim.lsp.buf.references()<CR>',
-    ['<leader>ds'] = '<cmd>lua vim.lsp.buf.document_symbol()<CR>'
+    ['<leader>ds'] = '<cmd>lua vim.lsp.buf.document_symbol()<CR>',
+    ['<leader>fe'] = '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
+    ['<leader>se'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>'
 })
 
 
