@@ -10,6 +10,14 @@ return require('packer').startup(function()
     use "nvim-treesitter/nvim-treesitter"
     use "neovim/nvim-lspconfig"
 
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {}
+      end
+    }
+
     use "hrsh7th/nvim-compe"
 
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}

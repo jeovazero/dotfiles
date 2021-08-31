@@ -19,7 +19,7 @@ local function eslint_config_exists()
 end
 
 lspconfig.julials.setup{}
-
+lspconfig.hls.setup{}
 lspconfig.tsserver.setup {
     cmd = {"typescript-language-server", "--stdio"},
     filetypes = {
@@ -87,4 +87,12 @@ H.map('n', {
     ['<leader>se'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>'
 })
 
+H.map('n', {
+    ['<leader>xx'] = '<cmd>TroubleToggle<cr>',
+    ['<leader>xw'] = '<cmd>TroubleToggle lsp_workspace_diagnostics<cr>',
+    ['<leader>xd'] = '<cmd>TroubleToggle lsp_document_diagnostics<cr>',
+    ['<leader>xq'] = '<cmd>TroubleToggle quickfix<cr>',
+    ['<leader>xl'] = '<cmd>TroubleToggle loclist<cr>',
+    ['<leader>xr'] = '<cmd>TroubleToggle lsp_references<cr>'
+})
 
