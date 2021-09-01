@@ -8,6 +8,7 @@ return require('packer').startup(function()
     use 'tiagovla/tokyodark.nvim'
 
     use "nvim-treesitter/nvim-treesitter"
+    use "neovimhaskell/haskell-vim"
     use "neovim/nvim-lspconfig"
 
     use {
