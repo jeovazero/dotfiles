@@ -1,5 +1,7 @@
 local H = require("helpers")
 
+require'nvim-tree'.setup {}
+
 local g = vim.g
 
 vim.o.termguicolors = true

@@ -5,7 +5,8 @@ H.map('n', {
     ["<leader>fg"] = "<cmd>Telescope live_grep<cr>",
     ["<leader>fb"] = "<cmd>Telescope buffers<cr>",
     ["<leader>fh"] = "<cmd>Telescope help_tags<cr>",
-    ["<leader>fm"] = "<cmd>Telescope media_files<cr>"
+    ["<leader>fm"] = "<cmd>Telescope media_files<cr>",
+    ["<leader>mm"] = "<cmd>Telescope metals commands<cr>"
 })
 
 require'telescope'.setup {

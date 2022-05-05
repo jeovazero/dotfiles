@@ -1,6 +1,7 @@
 local H = require("helpers") -- vim helpers
 
 local globals = vim.g
+vim.opt_global.shortmess:remove("F") -- from nvim-metals
 globals.mapleader = ','
 vim.opt.number = true
 vim.opt.clipboard = "unnamedplus"
