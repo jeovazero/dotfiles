@@ -1,63 +1,40 @@
 local H = require("helpers")
 
-require'nvim-tree'.setup {}
-
-local g = vim.g
-
-vim.o.termguicolors = true
-
-g.nvim_tree_side = 'left'
-g.nvim_tree_width = 30
-g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
-g.nvim_tree_gitignore = 1
-g.nvim_tree_auto_open = 1
-g.nvim_tree_auto_close = 1
-g.nvim_tree_quit_on_open = 0 
-g.nvim_tree_follow = 1
-g.nvim_tree_indent_markers = 1
-g.nvim_tree_hide_dotfiles = 0
-g.nvim_tree_git_hl = 1
-g.nvim_tree_highlight_opened_files = 1
-g.nvim_tree_tab_open = 1
-g.nvim_tree_width_allow_resize = 1
-g.nvim_tree_disable_netrw = 1
-g.nvim_tree_hijack_netrw = 1
-g.nvim_tree_add_trailing = 0
-g.nvim_tree_group_empty = 1 
-g.nvim_tree_lsp_diagnostics = 0
-g.nvim_tree_disable_window_picker = 0
+vim.opt.termguicolors = true
+vim.opt.splitright = true
 
 H.map('n', {
   ["<F3>"] = ":NvimTreeToggle<CR>",
   ["<leader>r"] = ":NvimTreeRefresh<CR>",
   ["<leader>n"] = ":NvimTreeFindFile<CR>",
 })
-g.nvim_tree_special_files = { 'README.md', 'Makefile', 'MAKEFILE' }
+-- <C-t> will open the file in a new tab
+-- type r to rename a file
+-- <Tab> will open the file as a preview (keeps the cursor in the tree)
+-- I will toggle visibility of hidden folders / files
+-- H will toggle visibility of dotfiles (files/folders starting with a .)
+-- C-k will toggle a popup with file infos about the file under the cursor
 
-g.nvim_tree_icons = {
-    default = '',
-    symlink = '',
-    git = {
-      unstaged = "✗",
-      staged = "✓",
-      unmerged = "",
-      renamed = "➜",
-      untracked = "★",
-      deleted = "",
-      ignored = "◌"
-    },
-    folder = {
-      default = "",
-      open = "",
-      empty = "",
-      empty_open = "",
-      symlink = "",
-      symlink_open = "",
-    },
-    lsp = {
+require'nvim-tree'.setup {
+  git = {
+    enable = true,
+    ignore = true,
+    timeout = 400,
+  },
+  diagnostics = {
+    enable = false,
+    show_on_dirs = false,
+    icons = {
       hint = "",
       info = "",
       warning = "",
       error = "",
-    }
+    },
+  },
+  actions = {
+    open_file = {
+        resize_window = true
+    },
+  },
 }
+
