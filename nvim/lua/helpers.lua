@@ -7,9 +7,9 @@ H.map = function(mode, mapping)
         local cmd, optionsPatch
 
 	if type(opts) == 'string' then
-            cmd, optionsPatch = opts, {}
+        cmd, optionsPatch = opts, {}
 	else
-            cmd, optionsPatch = unpack(opts)
+        cmd, optionsPatch = unpack(opts)
 	end
 
         local options = F.merge({noremap = true}, optionsPatch)

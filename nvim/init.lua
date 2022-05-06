@@ -24,7 +24,7 @@ require("gitsignsConfig")
 
 -- Mappings
 H.map('n', {
-    ["<Tab>"]     = ":tabnext<CR>",
+    ["<S-q>"]     = ":tabnext<CR>",
     ["<S-Tab>"]   = ":tabprev<CR>",
     ["<S-t>"]     = ":tabnew<CR>",
     ["<C-h>"]     = ":wincmd h<CR>",
@@ -37,5 +37,6 @@ H.map('n', {
     ["<A-Down>"]  = ":resize -5<CR>",
     ["<leader>q"] = ":bp<CR>",
     ["<leader>w"] = ":bn<CR>",
-    ["<leader>c"] = ":bd<CR>"
+    ["<leader>c"] = ":bd<CR>",
+    ["<C-S-r>"]    = ":source $MYVIMRC<CR>"
 })
