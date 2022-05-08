@@ -2,22 +2,6 @@ local lspconfig = require 'lspconfig'
 
 local H = require("helpers")
 
-local function eslint_config_exists()
-  local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
-
-  if not vim.tbl_isempty(eslintrc) then
-    return true
-  end
-
-  if vim.fn.filereadable("package.json") then
-    if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
-      return true
-    end
-  end
-
-  return false
-end
-
 lspconfig.julials.setup{}  -- JULIA
 lspconfig.hls.setup{}      -- HASKELL
 -- lspconfig.metals.setup{}   -- SCALA nvim-metals solves
@@ -52,6 +36,25 @@ lspconfig.tsserver.setup { -- TYPESCRIPT
     root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json",
                                            "jsconfig.json", ".git")
 }
+
+--[[
+-- ESLINT CONFIG
+local function eslint_config_exists()
+  local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
+
+  if not vim.tbl_isempty(eslintrc) then
+    return true
+  end
+
+  if vim.fn.filereadable("package.json") then
+    if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
+      return true
+    end
+  end
+
+  return false
+end
+
 local eslint = {
     lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
     lintIgnoreExitCode = true,
@@ -94,7 +97,7 @@ lspconfig.efm.setup {
         "css"
     }
 }
-
+]]--
 
 H.map('n', {
     ['dp'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
