@@ -34,13 +34,16 @@ return require('packer').startup(function()
     }
 
     use 'nvim-telescope/telescope-media-files.nvim'
-    use 'wakatime/vim-wakatime'
+    -- use 'wakatime/vim-wakatime'
 
-    use {
-        'iamcco/markdown-preview.nvim',
-        run = 'cd app && yarn install',
-        cmd = 'MarkdownPreview'
-    }
+    
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     use {
         'hoob3rt/lualine.nvim',
@@ -57,6 +60,14 @@ return require('packer').startup(function()
         },
       })
 
+     use {
+      'akinsho/flutter-tools.nvim',
+      requires = {
+         'nvim-lua/plenary.nvim',
+         'stevearc/dressing.nvim', -- optional for vim.ui.select
+      },
+    }
+    --[[
     use({
       "scalameta/nvim-metals",
       requires = {
@@ -64,4 +75,5 @@ return require('packer').startup(function()
         "mfussenegger/nvim-dap",
       },
     })
+    ]]--
 end)
